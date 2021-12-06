@@ -1,0 +1,14 @@
+<div class="nav-bar">
+    <ul>
+        <li><a href="/"><i class="fas fa-gifts"></i>Logo</a></li>
+        <li><a href="cart"><i class="fas fa-cart-arrow-down"></i>Cart</a></li>
+        <li class="create-link"><a href="#"><i class="fas fa-plus-square"></i>Create</a></li>
+        <li><a href="#"><i class="fas fa-user"></i><%= LoggedInUser.username %></a></li>
+        <li>
+            <form class="logout-form" action="/logout" method="post">
+                <button type="submit" name="button"><i class="fas fa-sign-out-alt"></i>Logout</button>
+            </form>
+        </li>
+        <li><i class="fas fa-bars menu-bar"></i></li>
+    </ul>
+</div>

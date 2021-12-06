@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/styles/login.css">
+    <link rel="stylesheet" href="/assets/styles/statics.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="logo-section">
+            <i class="fas fa-gifts login-logo"></i>
+            <p>Logo</p>
+        </div>
+        <% if (message.length > 0) { %>
+            <div class="alert alert-danger"><%= message %></div>
+        <% } %>
+        <form  action="/login" method="POST" >
+            <input type="text" id="username" name="username" placeholder="username" required/>
+            <input type="password" id="password" name="password" placeholder="password" required/>
+            <input type="submit" value="login"/>
+            <p>Don't have an account? <a href="signup">Signup here</a></p>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,184 @@
+*,body,html{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.nav-bar{
+    width: 100%;
+    margin: 0 auto;
+    height: fit-content;
+    height: -moz-fit-content;
+    text-align: center;
+    background-color: antiquewhite;
+    z-index: 2;
+    position: sticky;
+    top: 0;
+}
+.nav-bar ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.nav-bar ul li{
+    display: inline-block;
+}
+.nav-bar ul li:last-child{
+    float: right;
+    font-size: 23px;
+    margin: auto 0;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    display: none;
+}
+.nav-bar ul li a{
+    display: inline-block;
+    text-decoration: none;
+    padding: 16px 40px;
+    font-size: 23px;
+    border: 1px solid antiquewhite;
+}
+.nav-bar ul li form button{
+    border: 1px solid antiquewhite;
+    background: none;
+    padding: 16px 40px;
+    font-size: 23px;
+    cursor: pointer;
+}
+.nav-bar ul li a i{
+    padding-right: 5px;
+    transition: all 2000 linear;
+}
+.nav-bar ul li a:hover{
+    border: 1px solid #000000;
+}
+.nav-bar ul li form button:hover{
+    border: 1px solid #000000;
+}
+
+/* >> SIDE NAVIGATION << */
+.sidenav-overlay{
+    position: absolute;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    display: none;
+}
+.side-nav{
+/*    width: 30vw;*/
+    width: 0;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    position: fixed;
+    background-color: aquamarine;
+    z-index: 3;
+    text-align: center;
+/*    transform: translateX(30vw);*/
+    transition: all 0.5s linear;
+    
+}
+
+.side-nav div{
+    height: fit-content;
+    height: -moz-fit-content;
+    width: 100%;
+    border: 1px solid antiquewhite;
+}
+/*
+.side-nav ul li{
+    display: block;
+}
+*/
+.side-nav div a{
+    display: inline-block;
+    text-decoration: none;
+    padding: 16px 0;
+    font-size: 20px;
+    
+}
+.side-nav div button{
+    border: none;
+    background: none;
+    padding: 16px 0;
+    font-size: 20px;
+    cursor: pointer;
+}
+.side-nav div:first-child{
+    display: inline-block;
+    padding: 0;
+    font-size: 40px;
+    text-align: start;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    
+}
+.side-nav div:first-child a{
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 0;
+    font-size: 40px;
+    
+}
+.side-nav .logo-box .cancel-btn{
+    font-size: 20px;
+    align-self: center;
+    justify-self:end;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.side-nav div a i{
+    padding-right: 5px;
+    transition: all 2000 linear;
+}
+
+/* << NAVBAR MEDIA QUERIES >> */
+@media screen and (max-width:880px){
+    .nav-bar ul li:nth-child(2){
+        display: none;
+    }
+    .nav-bar ul li:nth-child(4){
+        display: none;
+    }
+    .nav-bar ul li:last-child{
+        display: block;
+    }
+    .nav-bar ul li a{
+        font-size: 22px;
+    }
+    
+    /* >> SIDE NAVIGATION << */
+    /* .side-nav{ */
+/*        width: 40vw;*/
+/*        transform: translateX(40vw);*/
+    /* } */
+    .side-nav div:first-child a{
+        font-size: 25px;
+    }
+}
+@media screen and (max-width:524px){
+    .nav-bar ul li:nth-child(5){
+        display: none;
+    }
+    .nav-bar ul li:last-child{
+        font-size: 15px;
+    }
+    .nav-bar ul li a{
+        font-size: 18px;
+        padding: 16px 10px;
+    }
+    
+    /* >> SIDE NAVIGATION << */
+    /* .side-nav{ */
+/*        width: 50vw;*/
+/*        transform: translateX(50vw);*/
+    /* } */
+    .side-nav div:first-child a{
+        font-size: 18px;
+    }
+}

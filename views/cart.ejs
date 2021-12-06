@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cart</title>  
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/assets/styles/statics.css">
+    <link rel="stylesheet" href="/assets/styles/cart.css">
+    <link rel="stylesheet" href="/assets/styles/create-item.css">
+    <style>
+        
+    </style>
+</head>
+
+<body>
+    <%- include('./components/nav') %>
+    <div class="cart-container">
+        <% for(var i = 0; i < cart_Items.length; i++){ %>  
+        <div class="cart-item">
+            <div class="cart-item-img">
+                <img src="../../assets/uploads/<%= cart_Items[i].photo %>" alt="<%= cart_Items[i].photo %>">
+            </div>
+            <div class="cart-item-details">
+                <p><%= cart_Items[i].name %></p>
+                <p class="price">Ksh <%= cart_Items[i].price %></p>
+            </div>
+            <div class="delete-btn">
+                <form class="delete-cart-item-form" method="POST" action="/delete-cart-item">
+                    <input type="hidden" name="itemId" value="<%= cart_Items[i].itemId %>">
+                    <button type="submit"><i class="fas fa-times"></i></button>
+                </form>
+            </div>
+        </div>
+        <% } %>
+        <div class="purchase">
+            <div class="total-amount">
+                <span class="total-label">Total Ksh: </span>
+                <span class="amount"><%= total_cost %></span>
+            </div> 
+            <form class="make-order-form" method="POST" action="/make-order">
+                <button class="order-btn">Make Order</button>
+            </form>
+        </div>
+    </div>
+    <div class="sidenav-overlay">
+    
+    </div>
+    <div class="createItem-form-container">
+        <div class="createproduct-prompt">Create your product <i class="far fa-times-circle createform-cancel-btn"></i></div>
+        <form class=createItem-form>
+            <input type="text" name="name" placeholder="Item name"/>
+            <input type="text" name="price" placeholder="Item price"/>
+            <textarea placeholder="Item description..."  name="descritption" rows="4" ></textarea>
+            <input type="file" name="image" placeholder="Item image" />
+            <div>
+            <input type="submit" value="submit" />
+            <input type="reset" value="cancel" />
+            </div>
+        </form>
+    </div>
+    <div class="side-nav">
+             
+                <div class="logo-box"><a href="#"><i class="fas fa-gifts"></i>Logo</a>
+                 <i class="fas fa-times cancel-btn"></i>
+                </div>
+            
+                <div><a href="#"><i class="fas fa-cart-arrow-down"></i>Cart</a></div>
+                <div><a href="#"><i class="fas fa-plus-square"></i>Create</a></div>
+                <div><a href="#"><i class="fas fa-user"></i>Account</a></div>
+                <div><a href="#"><i class="fas fa-sign-out-alt"></i>Logout</a></div>
+            
+        </div>
+    <script
+          src="https://code.jquery.com/jquery-3.5.1.js"
+          integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+          crossorigin="anonymous"></script>
+    <script src="/assets/scripts/statics.js"></script>
+    <script src="/assets/scripts/create-item.js"></script>
+</body>
+</html>

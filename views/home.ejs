@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/assets/styles/statics.css">
+    <link rel="stylesheet" href="/assets/styles/home.css">
+    <link rel="stylesheet" href="/assets/styles/create-item.css">
+
+    <style></style>
+</head>
+    <body>
+        <%- include('./components/nav') %>
+        
+        <div class="featured-items">
+            <% for(var i = 0; i < items.length; i++){ %>
+                <div class="item-container">
+                    <a href="itemdetails/<%= items[i].slug %>">
+                        <div class="item-img-container">
+                            <img src="../../assets/uploads/<%= items[i].photo %>" alt="<%= items[i].photo %>">
+                        </div>
+                        <div class="item-info">
+                            <p class="item-desc"><%= items[i].name %></p>
+                            <p class="item-price">ksh <%= items[i].price %></p>
+                        </div>
+                    </a>
+                </div>  
+            <% } %>
+        </div>
+        <div class="sidenav-overlay">
+    
+        </div>
+        <%- include('./components/create-form') %>
+        
+        <div class="side-nav">
+             
+                <div class="logo-box"><a href="home"><i class="fas fa-gifts"></i>Logo</a>
+                 <i class="fas fa-times cancel-btn"></i>
+                </div>
+            
+                <div><a href="cart"><i class="fas fa-cart-arrow-down"></i>Cart</a></div>
+                <div class="side-nav-create" ><a href="#"><i class="fas fa-plus-square"></i>Create</a></div>
+                <div><a href="#"><i class="fas fa-user"></i><%= LoggedInUser.username %></a></div>
+                <div>
+                    <form class="logout-form" action="/logout" method="post">
+                        <button type="submit" name="button"><i class="fas fa-sign-out-alt"></i>Logout</button>
+                    </form>
+                </div>
+            
+        </div>
+        <script
+          src="https://code.jquery.com/jquery-3.5.1.js"
+          integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+          crossorigin="anonymous"></script>
+        <script src="/assets/scripts/home.js"></script>
+        <script src="/assets/scripts/statics.js"></script>
+        <script src="/assets/scripts/create-item.js"></script>
+        <script src="/assets/scripts/create-form-submit.js"></script>
+    </body>
+</html>

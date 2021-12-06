@@ -1,0 +1,13 @@
+<div class="createItem-form-container">
+    <div class="createproduct-prompt">Create your product <i class="far fa-times-circle createform-cancel-btn"></i></div>
+    <form class="createItem-form" method="POST" action="/create-form" enctype="multipart/form-data">
+        <input type="text" name="name" placeholder="Item name" />
+        <input type="text" name="price" placeholder="Item price" />
+        <textarea placeholder="Item description..."  name="descritption" rows="4" ></textarea>
+        <input type="file" name="image" placeholder="Item image" />
+        <div>
+        <input class="form-submit" type="submit" value="submit" />
+        <input type="reset" value="cancel" />
+        </div>
+    </form>
+</div>

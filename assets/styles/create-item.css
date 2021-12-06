@@ -1,0 +1,87 @@
+.createItem-form-container{
+    width: 30%;
+    height: fit-content;
+    height: -moz-fot-content;
+    margin: 2% auto;
+    background-color: blanchedalmond;
+    padding: 10px;
+    text-align: center;
+    font-family: 'Arimo', sans-serif;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    display: none;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+.createItem-form-container .createproduct-prompt{
+    font-size: 20px;
+    padding: 10px;
+    font-weight: 700;
+}
+.createItem-form-container .createproduct-prompt .createform-cancel-btn{
+    float: right;
+    cursor: pointer;
+}
+.createItem-form-container form input{
+    font-size: 15px;
+    width: 80%;
+    height: 40px;
+    padding-left: 10px;
+    margin: 10px auto;
+    display: block;
+    border-radius: 5px;
+}
+.createItem-form-container form textarea{
+    width: 80%;
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 5px;
+}
+.createItem-form-container form input[type="file"]{
+    padding: 0;
+    height: fit-content;
+    height: -moz-fit-content;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.createItem-form-container form div input[type="submit"],
+.createItem-form-container form div input[type="reset"]{
+    width: 30%;
+    display: inline-block;
+    margin: 0 auto;
+    padding: 0;
+    cursor: pointer;
+}
+
+@media screen and (max-width:880px){
+    .createItem-form-container{
+        width: 48%;
+        padding: 5px;
+    }
+    .createItem-form-container form input[type="file"]{
+        font-size: 13px;
+    }
+    .createItem-form-container form div input[type="submit"],
+    .createItem-form-container form div input[type="reset"]{
+        height: 30px;
+    }
+}
+@media screen and (max-width:520px){
+    .createItem-form-container{
+        width: 70%;
+    }
+    .createItem-form-container .createproduct-prompt{
+        font-size: 18px;
+        padding: 10px;
+        font-weight: 700;
+    }
+    .createItem-form-container form input[type="file"]{
+        font-size: 12px;
+    }
+    .createItem-form-container form div input[type="submit"],
+    .createItem-form-container form div input[type="reset"]{
+        height: 28px;
+    }
+}

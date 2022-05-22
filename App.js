@@ -33,7 +33,8 @@ server_controllers(app);
 auth_modules.auth_controllers(app,passport);
 passport_config(passport);
 
-const port = process.env.PORT || 3001;
-app.listen(port, ()=>{
+// const port = process.env.PORT || 3001;
+const PORT = 3001;
+app.listen(process.env.PORT || PORT, ()=>{
     console.log("Server running on port 3001");
 });

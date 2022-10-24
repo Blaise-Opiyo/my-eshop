@@ -10,7 +10,8 @@ const view_controllers = (app) =>{
        
         console.log('connected as id ' + conn.threadId);
       }); */
-        app.get('/', auth_modules.isLoggedIn, (req, res) =>{
+        const homeRoutes = ['/', '/home'];
+        app.get(homeRoutes, auth_modules.isLoggedIn, (req, res) =>{
             let sql = 'SELECT id, name, price, photo, slug FROM items';
             conn.query(sql, (err, results) =>{
                 if (err) throw err;

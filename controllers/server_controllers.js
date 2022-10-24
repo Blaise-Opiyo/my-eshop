@@ -33,7 +33,7 @@ const server_controllers = (app) =>{
             if (err) throw err;
             else {
                 console.log(results);
-                res.redirect('/');
+                res.redirect('home');
             }
         });
     });
@@ -79,7 +79,7 @@ const server_controllers = (app) =>{
         if (err) throw err;
         else {
           console.log(results);
-          res.redirect('back');
+          res.redirect('home');
         }
     });
     });

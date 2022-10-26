@@ -29,7 +29,7 @@ app.use(flash());
 app.use(passport.session());
 
 view_controllers(app);
-server_controllers(app);
+server_controllers.server_controllers(app);
 auth_modules.auth_controllers(app,passport);
 passport_config(passport);
 

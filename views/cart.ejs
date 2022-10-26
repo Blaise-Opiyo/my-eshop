@@ -20,7 +20,7 @@
         <% for(var i = 0; i < cart_Items.length; i++){ %>  
         <div class="cart-item">
             <div class="cart-item-img">
-                <img src="../../assets/uploads/<%= cart_Items[i].photo %>" alt="<%= cart_Items[i].photo %>">
+                <img src="<%= cart_Items[i].imageUrl %>" alt="<%= cart_Items[i].photo %>">
             </div>
             <div class="cart-item-details">
                 <p><%= cart_Items[i].name %></p>
